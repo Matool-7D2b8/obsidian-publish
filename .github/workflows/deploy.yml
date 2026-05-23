@@ -18,22 +18,28 @@ jobs:
           node-version: 22
 
       - name: Sync Data_Struct vault
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          git clone --depth 1 https://github.com/125860197/DS_note.git /tmp/ds
+          git clone --depth 1 https://oauth2:$GH_TOKEN@github.com/125860197/DS_note.git /tmp/ds
           mkdir -p content/Data_Struct
           cp -r /tmp/ds/DS/. content/Data_Struct/
           rm -rf /tmp/ds
 
       - name: Sync Math_note vault
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          git clone --depth 1 https://github.com/125860197/Math_note.git /tmp/math
+          git clone --depth 1 https://oauth2:$GH_TOKEN@github.com/125860197/Math_note.git /tmp/math
           mkdir -p content/Math_note
           cp -r /tmp/math/Math/. content/Math_note/
           rm -rf /tmp/math
 
       - name: Sync En_learn vault
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          git clone --depth 1 https://github.com/125860197/En_word.git /tmp/en
+          git clone --depth 1 https://oauth2:$GH_TOKEN@github.com/125860197/En_word.git /tmp/en
           mkdir -p content/En_learn
           cp /tmp/en/*.md content/En_learn/ 2>/dev/null || true
           rm -rf /tmp/en
