@@ -14,6 +14,9 @@ rm -rf "$CONTENT_DIR/Data_Struct" "$CONTENT_DIR/Math_note" "$CONTENT_DIR/En_lear
 echo "[1/3] Syncing Data_Struct..."
 mkdir -p "$CONTENT_DIR/Data_Struct"
 cp -r "$VAULTS_DIR/Data_Struct/DS/." "$CONTENT_DIR/Data_Struct/"
+cp -r "$VAULTS_DIR/Data_Struct/CN/." "$CONTENT_DIR/Data_Struct/CN/"
+cp -r "$VAULTS_DIR/Data_Struct/CO/." "$CONTENT_DIR/Data_Struct/CO/"
+cp -r "$VAULTS_DIR/Data_Struct/OS/." "$CONTENT_DIR/Data_Struct/OS/"
 echo "       $(find "$CONTENT_DIR/Data_Struct" -name '*.md' | wc -l) notes copied"
 
 # --- Math_note ---
