@@ -25,10 +25,9 @@ jobs:
         run: |
           git clone --depth 1 https://oauth2:$GH_TOKEN@github.com/125860197/DS_note.git /tmp/ds
           mkdir -p content/Data_Struct
-          cp -r /tmp/ds/DS/. content/Data_Struct/
-          cp -r /tmp/ds/CN/. content/Data_Struct/CN/
-          cp -r /tmp/ds/CO/. content/Data_Struct/CO/
-          cp -r /tmp/ds/OS/. content/Data_Struct/OS/
+          for sub in DS CN CO OS; do
+            [ -d "/tmp/ds/$sub" ] && cp -r "/tmp/ds/$sub/." "content/Data_Struct/$sub/"
+          done
           rm -rf /tmp/ds
 
       - name: Sync Math_note vault
