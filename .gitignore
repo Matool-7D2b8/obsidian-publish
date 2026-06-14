@@ -1,0 +1,24 @@
+.DS_Store
+.gitignore
+node_modules
+public
+prof
+tsconfig.tsbuildinfo
+.obsidian
+.quartz-cache
+private/
+.replit
+replit.nix
+# 敏感文件 - 凭据与密钥
+.env
+.env.*
+credentials*
+secret*
+*.pem
+*.key
+*.token
+service-account*.json
+id_rsa*
+*.pkcs12
+*.pfx
+*.p12
