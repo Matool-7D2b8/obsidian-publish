@@ -58,8 +58,12 @@ function resetTransform() {
 }
 
 function getMousePos(e: MouseEvent): { x: number; y: number } {
-  const rect = container!.getBoundingClientRect()
-  return { x: e.clientX - rect.left, y: e.clientY - rect.top }
+  const imgRect = lightboxImg!.getBoundingClientRect()
+  // imgRect includes current transform. Compute the natural (pre-transform) origin
+  // so mouse coordinates and translateX/Y share the same coordinate system.
+  const originX = imgRect.left - translateX
+  const originY = imgRect.top - translateY
+  return { x: e.clientX - originX, y: e.clientY - originY }
 }
 
 function openLightbox(img: HTMLImageElement) {
