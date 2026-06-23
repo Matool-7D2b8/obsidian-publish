@@ -18,11 +18,11 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian", ".git", ".claude"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "local",
+      fontOrigin: "googleFonts",
       cdnCaching: false,
       typography: {
-        header: "Microsoft YaHei",
-        body: "Microsoft YaHei",
+        header: "LXGW WenKai",
+        body: "LXGW WenKai",
         code: "Consolas",
       },
       colors: {
