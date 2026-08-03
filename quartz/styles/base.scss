@@ -616,9 +616,9 @@ ol.overflow {
 }
 
 .katex-display {
-  display: initial;
+  display: block;
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: visible;
 }
 
 .external-embed.youtube,

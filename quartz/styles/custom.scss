@@ -3,3 +3,34 @@
 body {
   font-size: 18px;
 }
+
+// Prevent Chinese text in KaTeX formulas from being clipped
+// KaTeX ships no .cjk_fallback rule, so CJK chars fall back to the browser's
+// default serif (SimSun on Windows) whose taller metrics overflow the KaTeX line box.
+.katex .cjk_fallback {
+  font-family: var(--bodyFont);
+  white-space: normal;
+}
+
+.katex-display {
+  // Restore display:block so overflow-x:auto actually works
+  display: block;
+  overflow-x: auto;
+  overflow-y: visible;
+
+  & > .katex {
+    // Allow display math to break instead of clipping on narrow screens
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+}
+
+// Ensure formulas inside callouts aren't clipped
+.callout-content .katex-display {
+  overflow-y: visible;
+}
+
+.callout-content .katex {
+  overflow-y: visible;
+}
