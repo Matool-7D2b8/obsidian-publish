@@ -1,5 +1,20 @@
 # 更新日志
 
+## 2026-08-04
+
+### 修复：公式块内中文文字重叠（竖排堆叠）
+
+**问题**：`Data_Struct/OS/02_进程与线程/CPU调度算法.md` 等笔记的公式块内，直接写在数学模式中的中文（如 `利用率=\frac{工作时间}{总时间}`）在网页端出现文字重叠、排版混乱。
+
+**根因**：此前修复"中文被裁剪"时在 `.katex .cjk_fallback` 上加的 `white-space: normal`，使 KaTeX 数学布局将每个中文字都视为可换行点；外层 `.base`（inline-block）的固有宽度因此被压缩到单字宽，中文逐字换行形成竖排堆叠，视觉上就是文字重叠。KaTeX 基线布局本身正常。
+
+**修复方案**：
+- 移除 `quartz/styles/custom.scss` 中 `.katex .cjk_fallback` 的 `white-space: normal`（保留 `font-family: var(--bodyFont)`，中文仍用霞鹜文楷）
+- 保留防裁剪的 `overflow-y: visible` 规则（`.katex-display` 与 `.katex-display > .katex`）
+- 无头浏览器实测验证：CPU调度算法 页 25 处中文公式片段全部恢复横向单行，无堆叠、无裁剪、与上下段落无重叠
+
+---
+
 ## 2026-06-23
 
 ### 字体与样式

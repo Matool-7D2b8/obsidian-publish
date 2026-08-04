@@ -9,7 +9,6 @@ body {
 // default serif (SimSun on Windows) whose taller metrics overflow the KaTeX line box.
 .katex .cjk_fallback {
   font-family: var(--bodyFont);
-  white-space: normal;
 }
 
 .katex-display {
