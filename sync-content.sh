@@ -23,6 +23,9 @@ echo "       $(find "$CONTENT_DIR/Data_Struct" -name '*.md' | wc -l) notes copie
 echo "[2/3] Syncing Math_note..."
 mkdir -p "$CONTENT_DIR/Math_note"
 cp -r "$VAULTS_DIR/Math_note/Math/." "$CONTENT_DIR/Math_note/"
+if [ -d "$VAULTS_DIR/Math_note/线代" ]; then
+    cp -r "$VAULTS_DIR/Math_note/线代/." "$CONTENT_DIR/Math_note/线代/"
+fi
 echo "       $(find "$CONTENT_DIR/Math_note" -name '*.md' | wc -l) notes copied"
 
 # --- En_learn ---

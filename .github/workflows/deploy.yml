@@ -37,6 +37,7 @@ jobs:
           git clone --depth 1 https://oauth2:$GH_TOKEN@github.com/125860197/Math_note.git /tmp/math
           mkdir -p content/Math_note
           cp -r /tmp/math/Math/. content/Math_note/
+          [ -d "/tmp/math/线代" ] && cp -r "/tmp/math/线代/." "content/Math_note/线代/"
           rm -rf /tmp/math
 
       - name: Sync En_learn vault
