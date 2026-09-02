@@ -7,6 +7,7 @@
 - Math_note vault 新增 `线代/` 目录（向量组、方程组、矩阵、行列式 4 篇笔记及图片）
 - `deploy.yml` 与 `sync-content.sh` 的 Math_note 同步逻辑增加 `线代/` 目录复制
 - 原同步逻辑仅复制 `Math/` 目录，导致线代笔记虽已 push 到 GitHub 但不会出现在网站
+- 同步修正 `deploy.yml` 三处 vault 克隆地址（125860197 → Matool-7D2b8）
 
 ---
 
